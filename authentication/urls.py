@@ -5,6 +5,6 @@ urlpatterns = [
     # other URL patterns
     path('', views.dash, name='dash'),
     path('login/', views.login_view, name='login'),
-    path('login/register/', views.register, name='register'),
+    path('register/', views.register, name='register'),
     # other URL patterns
 ]
