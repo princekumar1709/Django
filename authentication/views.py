@@ -27,6 +27,7 @@ def signup(request):
          return render(request,'signup.html')
 
 
+
 #login page
 def log(request):
     if request.method == 'POST':
