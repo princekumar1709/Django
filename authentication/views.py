@@ -16,13 +16,16 @@ def signup(request):
         username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        user= User.objects.create_user(username=username, email=email, password=password)
-        if user:
-            print('User created successfully')
-            user.save()
-            return redirect('log')  # Redirect to the login page
+        #check usernames and password already exist or not
+        if User.objects.filter(username=username).exists():
+             print('username already exists')
+        elif User.objects.filter(email=email).exists():
+             print('email already exists')
         else:
-            return redirect('signup.html') #redirect to the signup page
+            user= User.objects.create_user(username=username, email=email, password=password)
+            user.save()
+            print('User created successfully')
+            return redirect('log')  # Redirect to the login page
     else:
          return render(request,'signup.html')
 
