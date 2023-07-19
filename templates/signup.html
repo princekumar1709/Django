@@ -63,6 +63,13 @@
         #acc a{
             text-decoration: none;
         }
+
+        #message {
+            text-align: center;
+        }
+        #message h5{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -77,6 +84,8 @@
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                <div id="message">
+                </div>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
@@ -89,6 +98,11 @@
                 <p>Already have an account.&nbsp;&nbsp;<a href="log">Login here</a></p>
             </div>
         </form>
+        <div id="message">
+            {% for message in messages %}
+                <h5>{{message}}</h5>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>
