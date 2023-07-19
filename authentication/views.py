@@ -55,3 +55,8 @@ def log(request):
 
     #if request.method is GET            
     return render(request, 'log.html')
+
+# logout page
+def logout(request):
+     auth.logout(request)
+     return redirect('dash')

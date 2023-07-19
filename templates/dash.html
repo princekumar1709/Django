@@ -33,16 +33,26 @@
             border-radius: 5px;
             text-align: center;
         }
-.log-in{
+.auth-btn:hover{
+    background-color: red;
+    border-radius: 8px;
+}
+.auth-btn{
     padding: 10px 20px;
     text-align: center;
     margin-top: 18px;
+    border-radius: 6px;
 }
-.log-in a{
+.auth-btn a{
     text-decoration: none;
     font-weight: 600;
     font-size: 17px;
-    color: blue;
+    color: black;
+}
+span{
+    margin-right: 10px;
+    font-weight: 600;
+    color: yellow;
 }
 
     </style>
@@ -51,9 +61,13 @@
     <div class="header">
         <h1>Data Visualization Dashboard</h1>
         <div>
-
-            <button class="log-in"><a href="signup">sign up</a></button>
-            <button class="log-in"><a href="log">sign in</a></button>
+            {% if user.is_authenticated %}
+            <span>Hello {{user.username}}</span>
+            <button class="auth-btn"><a href="logout">logout</a></button>
+            {% else %}
+            <button class="auth-btn"><a href="signup">sign up</a></button>
+            <button class="auth-btn"><a href="log">sign in</a></button>
+            {% endif %}
  
         </div>
     </div>
