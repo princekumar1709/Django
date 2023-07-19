@@ -60,3 +60,7 @@ def log(request):
 def logout(request):
      auth.logout(request)
      return redirect('dash')
+
+
+def upload(request):
+     return render(request, 'upload.html')

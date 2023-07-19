@@ -1,9 +1,9 @@
 
-
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Visualization Dashboard</title>
+    <title>VisualMetrix</title>
     <style>
         /* CSS styling for the dashboard */
         body {
@@ -34,11 +34,12 @@
             text-align: center;
         }
 .auth-btn:hover{
-    background-color: red;
+    background-color: lightgrey;
+    opacity: 0.8;
     border-radius: 8px;
 }
 .auth-btn{
-    padding: 10px 20px;
+    padding: 5px 20px;
     text-align: center;
     margin-top: 18px;
     border-radius: 6px;
@@ -49,20 +50,37 @@
     font-size: 17px;
     color: black;
 }
-span{
+#name{
     margin-right: 10px;
     font-weight: 600;
     color: yellow;
+}
+#logo:hover{
+    color: yellow;
+}
+#load{
+    text-align: center;
+}
+
+.load{
+    padding: 10px 20px;
+    background-color: lightgreen;
+    text-align: center;
+    font-size: 18px;
+}
+.load a{
+    text-decoration: none;
+    color: black;
 }
 
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Data Visualization Dashboard</h1>
+        <h2 id="logo">VisualMetrix</h2>
         <div>
             {% if user.is_authenticated %}
-            <span>Hello {{user.username}}</span>
+            <span id="name">Hello {{user.username}}</span>
             <button class="auth-btn"><a href="logout">logout</a></button>
             {% else %}
             <button class="auth-btn"><a href="signup">sign up</a></button>
@@ -87,6 +105,10 @@ span{
             <img src="https://cdn-icons-png.flaticon.com/128/8635/8635807.png" alt="">
             <!-- Place your pie chart visualization code or embed here -->
         </div>
+
+    </div>
+    <div id="load">
+        <button class="load"><a href="upload">Get Started</a></button>
     </div>
 </body>
 </html>
