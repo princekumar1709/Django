@@ -39,7 +39,7 @@
     border-radius: 8px;
 }
 .auth-btn{
-    padding: 5px 20px;
+    padding: 6px 21px;
     text-align: center;
     margin-top: 18px;
     border-radius: 6px;
@@ -49,6 +49,9 @@
     font-weight: 600;
     font-size: 17px;
     color: black;
+}
+#logout a:hover{
+color: red;
 }
 #name{
     margin-right: 10px;
@@ -66,12 +69,14 @@
     padding: 10px 20px;
     background-color: lightgreen;
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
+    border-radius: 4px;
 }
 .load a{
     text-decoration: none;
     color: black;
 }
+
 
     </style>
 </head>
@@ -81,7 +86,7 @@
         <div>
             {% if user.is_authenticated %}
             <span id="name">Hello {{user.username}}</span>
-            <button class="auth-btn"><a href="logout">logout</a></button>
+            <button class="auth-btn" id="logout"><a href="logout">logout</a></button>
             {% else %}
             <button class="auth-btn"><a href="signup">sign up</a></button>
             <button class="auth-btn"><a href="log">sign in</a></button>
@@ -108,7 +113,11 @@
 
     </div>
     <div id="load">
-        <button class="load"><a href="upload">Get Started</a></button>
+        {% if user.is_authenticated %}
+        <button class="load"><a href="upload">upload file</a></button>
+        {% else %}
+        <button class="load"><a href="signup">Get Started</a></button>
+        {% endif %}
     </div>
 </body>
 </html>

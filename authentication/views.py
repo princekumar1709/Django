@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.http import HttpResponse
 from django.contrib import messages
+import pandas as pd
+import openpyxl
 
 # from .models import user
 
@@ -63,4 +65,9 @@ def logout(request):
 
 
 def upload(request):
-     return render(request, 'upload.html')
+    return render(request,'upload.html')
+
+def visual(request):
+    if request.method == 'POST' and request.FILES.get('excelFile'):
+        return render(request, 'visual.html')
+    return redirect(request,'upload')
