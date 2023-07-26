@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
-from django.http import HttpResponse
 from django.contrib import messages
-import pandas as pd
-import openpyxl
+# import pandas as pdsss
 
 # from .models import user
 
@@ -69,5 +67,14 @@ def upload(request):
 
 def visual(request):
     if request.method == 'POST' and request.FILES.get('excelFile'):
-        return render(request, 'visual.html')
+        # print('file uploaded successfully')
+        # excel_file = request.FILES['excelFile']
+        # df = pd.read_excel(excel_file)
+
+        # # Get the column names from the DataFrame
+        # column_names = df.columns.tolist()
+
+        # # Pass the column names to the template
+        # return render(request, 'visual.html', {'column_names': column_names})
+            return render(request,'visual.html')
     return redirect(request,'upload')
