@@ -8,4 +8,8 @@ class user(models.Model):
     password = models.CharField(max_length=100)
 
 
+class ExcelData(models.Model):
+    data = models.JSONField()
+
+
 

@@ -1,11 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VisualMetrix</title>
-</head>
-<body>
-    <h1>Successfully Uploaded....</h1>
-</body>
+    <link rel="stylesheet" href="{% static 'css/visual.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="side">
+        <p>{{cols}}</p>
+      </div>
+      <div class="mainbar">
+        <div class="row-col">
+          <div class="row-col-side">
+            <div class="input-field">
+              <h4 id="row">Rows :</h4>
+              <input type="text" name="row" id="">
+            </div><br>
+            <div class="input-field">
+              <h4>Columns :</h4>
+              <input type="text" name="cols" id="">
+            </div>
+          </div>
+          <div class="showme">
+            <h3>Show me</h3>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </body>
 </html>

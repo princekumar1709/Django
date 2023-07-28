@@ -1,10 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
-from django.http import HttpResponse
 from django.contrib import messages
 import pandas as pd
-import openpyxl
-
+from.models import ExcelData
 # from .models import user
 
 
@@ -69,5 +67,18 @@ def upload(request):
 
 def visual(request):
     if request.method == 'POST' and request.FILES.get('excelFile'):
-        return render(request, 'visual.html')
-    return redirect(request,'upload')
+        excel_file = request.FILES['excelFile']
+
+        # Read the Excel file into a pandas DataFrame
+        df = pd.read_excel(excel_file)
+
+        columns = df.columns.to_list()
+
+        # Convert DataFrame to JSON (List of dictionaries)
+        data_list = df.to_dict(orient='records')
+
+        # Save data to the database
+        ExcelData.objects.create(data=data_list)
+        return render(request, 'visual.html',{'cols':columns})
+    else:
+        return redirect(request,'upload')
