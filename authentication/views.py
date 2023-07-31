@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
-# import pandas as pdsss
+from .models import ExcelData 
+import pandas as pd
 
 # from .models import user
 
@@ -67,14 +68,17 @@ def upload(request):
 
 def visual(request):
     if request.method == 'POST' and request.FILES.get('excelFile'):
-        # print('file uploaded successfully')
-        # excel_file = request.FILES['excelFile']
-        # df = pd.read_excel(excel_file)
+        excel_file = request.FILES['excelFile']
 
-        # # Get the column names from the DataFrame
-        # column_names = df.columns.tolist()
+        # Read the Excel file into a pandas DataFrame
+        df = pd.read_excel(excel_file)
+        print(df)
+        cols=df.columns.to_list()
+        # Convert DataFrame to JSON (List of dictionaries)
+        data_list = df.to_dict(orient='records')
 
-        # # Pass the column names to the template
-        # return render(request, 'visual.html', {'column_names': column_names})
-            return render(request,'visual.html')
-    return redirect(request,'upload')
+        # Save data to the database
+        ExcelData.objects.create(data=data_list)
+        return render(request,'visual.html',{'data':cols})
+    else:
+        return redirect(request,'upload')
