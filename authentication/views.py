@@ -74,11 +74,15 @@ def visual(request):
         df = pd.read_excel(excel_file)
         print(df)
         cols=df.columns.to_list()
+        
         # Convert DataFrame to JSON (List of dictionaries)
-        data_list = df.to_dict(orient='records')
+        # data_list = df.to_dict(orient='records') 
+
+        # Convert DataFrame to a dictionary with column names as keys and lists of values as values
+        data_list = {col: df[col].tolist() for col in df.columns}                                         
 
         # Save data to the database
         ExcelData.objects.create(data=data_list)
-        return render(request,'visual.html',{'data':cols})
+        return render(request,'visual.html',{'columns':cols,'data':data_list})  
     else:
         return redirect(request,'upload')

@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            {% for ele in data %}
+            {% for ele in  columns %}
             <div class="rows" draggable="true">
                <h4>{{ele}}</h4>
             </div>
@@ -44,6 +44,11 @@
 
                 </div>
                 
+            </div>
+            <div class="graph-container">
+                {% for d in data.values %}
+               <p>{{d}}</p>
+               {% endfor %}
             </div>
 
         </div>

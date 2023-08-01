@@ -12,22 +12,21 @@ body{
 }
 .sidebar{
     border: 1px solid black;
-    width: 250px;
+    width: 200px;
     height: 100%;
     border-radius: 8px;
 }
 .mainbar{
-    border: 1px solid red;
-    width: 1240px;
+    border: 1px solid black;
+    width: 1300px;
     height: 100%;
     border-radius: 8px;
 }
 .element-con{
-    /* border: 2px solid black; */
+
     display: flex;
     justify-content: space-between;
-    margin: 10px;
-    border-radius:8PX ;
+    border-radius:8px;
 }
 .row{
     margin: 10px;
@@ -69,7 +68,17 @@ body{
     justify-content:space-evenly;
 }
 .showme img{
-    margin: 20px;
+margin: 20px;
 height: 60px;
 width: 60px;
+}
+
+
+.graph-container{
+    position:absolute;
+    padding: 10px;
+    margin: 0px 10px;
+    width: 82%;
+    height: 63%;
+
 }
