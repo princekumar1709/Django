@@ -1,99 +1,39 @@
-<<<<<<< HEAD
 *{
     box-sizing: border-box;
 }
-=======
->>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
+
 body{
     margin: 0;
     padding: 0;
 }
 .container{
-<<<<<<< HEAD
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    height: 620px;
-    padding: 10px;
-    overflow: hidden;
-    background-color: #EAF6F6;
-}
-
-.side{
-    border: 1px solid black;
-    width: 250px;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-}
-
-.mainbar{
-    border: 1px solid black;
-    width: 1080px;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-}
-
-.cname{
-    border: 1px solid black;
-    width: 80%;
-    text-align: center;
-
-}
-.row-col{
-    border: 1px solid black;
-    position: relative;
-    background-color: #EAF6F6;
-    margin: 10px;
-    padding: 5px;
-    border-radius:5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.input-field h4{
-    display: inline;
-}
-#row{
-    margin-left: 23px;
-}
-
-.input-field input{
-    padding: 12px 0px;
-    width: 430px;
-    border-radius: 8px;
-}
-
-
-=======
     display: flex;
     justify-content: space-between;
     border: 2px solid black;
-    height: 700px;
+    height: 100vh;
     padding: 10px;
 
 }
 .sidebar{
     border: 1px solid black;
-    width: 200px;
+    width: 13%;
     height: 100%;
     border-radius: 8px;
 }
 .mainbar{
     border: 1px solid black;
-    width: 1300px;
+    width: 86%;
     height: 100%;
     border-radius: 8px;
+    padding: 8px;
 }
 .element-con{
-
+    /* border: 1px solid; */
     display: flex;
     justify-content: space-between;
     border-radius:8px;
 }
-.row{
-    margin: 10px;
-}
+
 .row h3{
     margin: 0;
     padding: 0;
@@ -130,19 +70,20 @@ body{
     display: flex;
     justify-content:space-evenly;
 }
+.showme{
+    margin-top: 38px;
+}
 .showme img{
-margin: 20px;
-height: 60px;
-width: 60px;
+margin: 10px;
+height: 30px;
+width: 30px;
 }
 
 
 .graph-container{
-    position:absolute;
-    padding: 10px;
-    margin: 0px 10px;
-    width: 82%;
-    height: 63%;
+/* border: 1px solid; */
+border-radius:8PX ;
+height: 76%;
+
 
 }
->>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
