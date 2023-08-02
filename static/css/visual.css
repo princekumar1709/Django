@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 *{
     box-sizing: border-box;
 }
+=======
+>>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
 body{
     margin: 0;
     padding: 0;
 }
 .container{
+<<<<<<< HEAD
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -61,3 +65,84 @@ body{
 }
 
 
+=======
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    height: 700px;
+    padding: 10px;
+
+}
+.sidebar{
+    border: 1px solid black;
+    width: 200px;
+    height: 100%;
+    border-radius: 8px;
+}
+.mainbar{
+    border: 1px solid black;
+    width: 1300px;
+    height: 100%;
+    border-radius: 8px;
+}
+.element-con{
+
+    display: flex;
+    justify-content: space-between;
+    border-radius:8px;
+}
+.row{
+    margin: 10px;
+}
+.row h3{
+    margin: 0;
+    padding: 0;
+}
+.input{
+    padding:5px;
+    height: 50px;
+    width: 800px;
+    border-radius:8PX ;
+    border: 1px solid black;
+
+}
+
+
+.rows{
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 70%;
+    margin: 10px auto;
+    text-align: center;
+}
+.rows > h4{
+    margin: 8px;
+    font-size: 18px;
+}
+
+
+/* graph section */
+.showme{
+    border: 1px solid cl;
+}
+
+.panel{
+    display: flex;
+    justify-content:space-evenly;
+}
+.showme img{
+margin: 20px;
+height: 60px;
+width: 60px;
+}
+
+
+.graph-container{
+    position:absolute;
+    padding: 10px;
+    margin: 0px 10px;
+    width: 82%;
+    height: 63%;
+
+}
+>>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198

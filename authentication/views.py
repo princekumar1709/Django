@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
+from .models import ExcelData 
 import pandas as pd
+<<<<<<< HEAD
 from.models import ExcelData
+=======
+
+>>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
 # from .models import user
 
 
@@ -71,6 +76,7 @@ def visual(request):
 
         # Read the Excel file into a pandas DataFrame
         df = pd.read_excel(excel_file)
+<<<<<<< HEAD
 
         columns = df.columns.to_list()
 
@@ -80,5 +86,19 @@ def visual(request):
         # Save data to the database
         ExcelData.objects.create(data=data_list)
         return render(request, 'visual.html',{'cols':columns})
+=======
+        print(df)
+        cols=df.columns.to_list()
+        
+        # Convert DataFrame to JSON (List of dictionaries)
+        # data_list = df.to_dict(orient='records') 
+
+        # Convert DataFrame to a dictionary with column names as keys and lists of values as values
+        data_list = {col: df[col].tolist() for col in df.columns}                                         
+
+        # Save data to the database
+        ExcelData.objects.create(data=data_list)
+        return render(request,'visual.html',{'columns':cols,'data':data_list})  
+>>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
     else:
         return redirect(request,'upload')
