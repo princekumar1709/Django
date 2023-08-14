@@ -71,14 +71,14 @@ def visual(request):
 
         # Read the Excel file into a pandas DataFrame
         df = pd.read_excel(excel_file)
-        print(df)
+        df.replace(['###','null'],pd.NA,inplace=True)
+        # print(df)
         cols=df.columns.to_list()
-        
-        # Convert DataFrame to JSON (List of dictionaries)
-        # data_list = df.to_dict(orient='records') 
-
+        print(cols)
+ 
         # Convert DataFrame to a dictionary with column names as keys and lists of values as values
-        data_list = {col: df[col].tolist() for col in df.columns}                                         
+        data_list = {col: df[col].tolist() for col in df.columns}      
+        print(data_list)                                   
 
         # Save data to the database
         ExcelData.objects.create(data=data_list)

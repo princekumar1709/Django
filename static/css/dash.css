@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-/* CSS styling for the dashboard */
-body {
-=======
  /* CSS styling for the dashboard */
  body {
->>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -36,53 +31,33 @@ background-color: lightgrey;
 opacity: 0.8;
 border-radius: 8px;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
 .auth-btn{
 padding: 6px 21px;
 text-align: center;
 margin-top: 18px;
 border-radius: 6px;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
 .auth-btn a{
 text-decoration: none;
 font-weight: 600;
 font-size: 17px;
 color: black;
 }
-<<<<<<< HEAD
-#logout a:hover{
-color: red;
-}
-=======
 
 #logout a:hover{
 color: red;
 }
 
->>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
 #name{
 margin-right: 10px;
 font-weight: 600;
 color: yellow;
 }
-<<<<<<< HEAD
-#logo:hover{
-color: yellow;
-}
-=======
 
 #logo:hover{
 color: yellow;
 }
 
->>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
 #load{
 text-align: center;
 }
@@ -94,10 +69,6 @@ text-align: center;
 font-size: 25px;
 border-radius: 4px;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 47427bd16bb8d411586f223128308ac0f83a4198
 .load a{
 text-decoration: none;
 color: black;

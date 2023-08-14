@@ -57,7 +57,6 @@ body{
 }
 .rows:hover{
     cursor: grab;
-    background-color: lightgreen;
 }
 .rows > h4{
     margin: 8px;

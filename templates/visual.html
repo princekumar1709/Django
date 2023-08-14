@@ -11,7 +11,7 @@
     <div class="container">
         <div class="sidebar">
             {% for ele in  columns %}
-            <div class="rows" draggable="true">
+            <div class="rows" draggable="true" ondrag="drag(event)">
                <h4>{{ele}}</h4>
             </div>
             {% endfor %}
@@ -19,13 +19,13 @@
         <div class="mainbar">
             <div class="element-con">
                 <div class="side-panel">
-                    <div class="row" id="row"   >
+                    <div class="row" id="row">
                         <h3>Rows :</h3>
-                        <div class="input"></div>
+                        <div class="input" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
                     </div>
                     <div class="row">
                         <h3>Columns :</h3>
-                        <div class="input"></div>
+                        <div class="input" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
                     </div>
                 </div>
                 <div class="showme">
@@ -51,13 +51,14 @@
                 </div>
                 
             </div>
-            <div class="graph-container">
+            <!-- <div class="graph-container">
                 {% for d in data.values %}
                <p>{{d}}</p>
                {% endfor %}
-            </div>
+            </div> -->
 
         </div>
     </div>
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>

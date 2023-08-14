@@ -9,7 +9,6 @@ function drag(event) {
 }
 
 function drop(event) {
-    alert('you are dropping here');
     event.preventDefault();
     var data = event.dataTransfer.getData('text/plain');
 
