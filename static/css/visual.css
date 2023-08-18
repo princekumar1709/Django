@@ -38,6 +38,7 @@ body{
     margin: 0;
     padding: 0;
 }
+
 .input{
     padding:5px;
     height: 50px;
@@ -51,7 +52,7 @@ body{
 .rows{
     border: 1px solid black;
     border-radius: 8px;
-    width: 70%;
+    width: 138px;
     margin: 10px auto;
     text-align: center;
 }

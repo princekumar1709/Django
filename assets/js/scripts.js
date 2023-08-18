@@ -5,16 +5,22 @@ function allowDrop(event) {
 
 function drag(event) {
     // Save the data of the dragged field name
-    event.dataTransfer.setData('text/plain', event.target.innerText);
+    event.dataTransfer.setData('text/plain', event.target.classList.contains('rows'));
 }
 
 function drop(event) {
     event.preventDefault();
-    var data = event.dataTransfer.getData('text/plain');
 
-    // Append the dropped field name to the target div
     var targetDiv = event.target;
     if (targetDiv.classList.contains('input')) {
-        targetDiv.innerHTML += '<div>' + data + '</div>';
+        var data = event.dataTransfer.getData('text/plain');
+        var draggedElement = document.createElement('div'); // Create a new div
+        draggedElement.className = 'rows'; // Apply the appropriate class
+        draggedElement.textContent = data; // Set the text content
+        
+        targetDiv.appendChild(draggedElement);
     }
 }
+
+
+

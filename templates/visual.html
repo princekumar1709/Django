@@ -11,7 +11,7 @@
     <div class="container">
         <div class="sidebar">
             {% for ele in  columns %}
-            <div class="rows" draggable="true" ondrag="drag(event)">
+            <div class="rows" draggable="true" ondragstart="drag(event)">
                <h4>{{ele}}</h4>
             </div>
             {% endfor %}
